@@ -8,6 +8,7 @@ state game_running {
 	playing_game --> pause: GM_triggers_pause
 	playing_game --> pause: buzz
 	pause --> reveal: game_master_triggers_reveal
+	pause --> playing_game: game_master_triggers_continue
 	reveal --> playing_game: GM_triggers_next
 	playing_game --> reveal: GM_triggers_reveal
 }
